@@ -1,0 +1,134 @@
+{
+    "auctionInfo": [
+        {
+            "id": 1,
+            "name": "妙蛙種子",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 2,
+            "name": "小火龍",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 3,
+            "name": "傑尼龜",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 4,
+            "name": "皮卡丘",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 5,
+            "name": "波波",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 6,
+            "name": "喵喵",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 7,
+            "name": "腕力",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 8,
+            "name": "小拳石",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 9,
+            "name": "卡拉卡拉",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        },
+        {
+            "id": 10,
+            "name": "伊布",
+            "bidArray": {
+                "priceArray": [
+                    0
+                ],
+                "usernameArray": [
+                    "Seller"
+                ]
+            },
+            "inAuction": "false"
+        }
+    ]
+}

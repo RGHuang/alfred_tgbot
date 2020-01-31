@@ -1,0 +1,19 @@
+{
+    "codeInfo": [
+        {
+            "privateKey": "7BFB502B836AADCF597BD0853A9A4E0F204CFA38AE0785FAEAE73E2F0FA7C80B",
+            "erc": 500,
+            "status": "on"
+        },
+        {
+            "privateKey": "049147785C2C22C76239ED2E5EF608E973163C3C3628FD9354BEBAD8C592E0FK",
+            "erc": 1000,
+            "status": "on"
+        },
+        {
+            "privateKey": "0252859E8F210E1D90CA024D76288BF81F30A0739CEFC72BA648183F66A39069",
+            "erc": 1500,
+            "status": "on"
+        }
+    ]
+}

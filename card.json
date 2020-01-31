@@ -1,0 +1,71 @@
+{
+    "cardInfo": [
+        {
+            "id": 1,
+            "name": "妙蛙種子",
+            "ability": "藤蔓"
+        },
+        {
+            "id": 2,
+            "name": "小火龍",
+            "ability": "火苗"
+        },
+        {
+            "id": 3,
+            "name": "傑尼龜",
+            "ability": "水花"
+        },
+        {
+            "id": 4,
+            "name": "皮卡丘",
+            "ability": "雷電"
+        },
+        {
+            "id": 5,
+            "name": "波波",
+            "ability": "爪擊"
+        },
+        {
+            "id": 6,
+            "name": "喵喵",
+            "ability": "爪擊"
+        },
+        {
+            "id": 7,
+            "name": "腕力",
+            "ability": "揍"
+        },
+        {
+            "id": 8,
+            "name": "小拳石",
+            "ability": "揍"
+        },
+        {
+            "id": 9,
+            "name": "卡拉卡拉",
+            "ability": "揍"
+        },
+        {
+            "id": 10,
+            "name": "伊布",
+            "ability": "撞"
+        }
+    ],
+    "evolveCardInfo": [
+        {
+            "id": 1,
+            "name": "妙蛙花",
+            "ability": "飛葉快刀"
+        },
+        {
+            "id": 2,
+            "name": "噴火龍",
+            "ability": "噴射火焰"
+        },
+        {
+            "id": 3,
+            "name": "水箭龜",
+            "ability": "水柱"
+        }
+    ]
+}
