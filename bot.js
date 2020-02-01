@@ -981,7 +981,7 @@ function writeAuctionJSON() {
 
 
         let str = JSON.stringify(auction);
-        fs.writeFile('./card.json', str, function (err) {
+        fs.writeFile('./auction.json', str, function (err) {
             if (err) {
                 console.error(err);
             }
