@@ -21,12 +21,11 @@ newBuzzerStatus.save(function (err) {
 })
 */
 
-let changeBuzzerStatusCron = new cron.CronJob('* 2 * * * *', changeStatusToTrue);
+let changeBuzzerStatusCron = new cron.CronJob('* 00 * * * *', changeStatusToTrue);
 changeBuzzerStatusCron.start();
 
 //bot configure
 const telegramBot = new TelegramApi(process.env.TGBOT_TOKEN, { polling: true });
-console.log(telegramBot, 'tg bot started');
 telegramBot.userJSON = require('./user.json');
 telegramBot.cardJSON = require('./card.json');
 telegramBot.auctionJSON = require('./auction.json');
@@ -667,11 +666,11 @@ return userID1;*/
 }
 
 function changeStatusToTrue() {
-    buzzerStatus.updateOne({ index: 1 },
+    buzzerStatus.updateOne({ name: "TGBuzzer" },
         { sendWarningToSlackorNot: true }).then(result => {
             console.log(result);
         })
-    console.log("change");
+    //console.log("change");
 }
 
 /*
