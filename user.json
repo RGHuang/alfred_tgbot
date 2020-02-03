@@ -1,14 +1,14 @@
 {
     "userInfo": [
         {
-            "userID": 1038679282,
-            "username": "roger0512",
-            "points": 160,
-            "commandAmount": 6,
+            "userID": 913594741,
+            "username": "evelion41",
+            "points": 30,
+            "commandAmount": 3,
             "card": [
                 {
-                    "cardStatus": "on",
-                    "cardAmount": 1,
+                    "cardStatus": "off",
+                    "cardAmount": 0,
                     "selling": "false"
                 },
                 {
@@ -17,8 +17,8 @@
                     "selling": "false"
                 },
                 {
-                    "cardStatus": "on",
-                    "cardAmount": 1,
+                    "cardStatus": "off",
+                    "cardAmount": 0,
                     "selling": "false"
                 },
                 {
@@ -77,10 +77,10 @@
             "checkin": "on"
         },
         {
-            "userID": 0,
-            "username": "test",
-            "points": 0,
-            "commandAmount": 0,
+            "userID": 1038679282,
+            "username": "roger0512",
+            "points": 300,
+            "commandAmount": 30,
             "card": [
                 {
                     "cardStatus": "on",

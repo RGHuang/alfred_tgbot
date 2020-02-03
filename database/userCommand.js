@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+
 
 //database configure
 let db = mongoose.connection;
@@ -9,7 +11,7 @@ db.once('open', function () {
     console.log("userCommand connection success...");
 });
 //建立連線
-mongoose.connect('mongodb://localhost/alfred', { useUnifiedTopology: true, useNewUrlParser: true }).then(() => console.log('DB Connected!'))
+mongoose.connect(process.env.BOT_MONGODB_URL, { useNewUrlParser: true }).then(() => console.log('DB Connected!'))
     .catch(err => {
         console.log(err);
     });

@@ -1,8 +1,6 @@
 // Dependencies
 let fs = require('fs');
 let cron = require('cron');
-const port = 80;
-const url = 'https://api.telegram.org/bot';
 const { prefix } = require('./config.json');
 const TelegramApi = require('node-telegram-bot-api');
 require('dotenv').config();
@@ -10,9 +8,25 @@ let userDB = require('./database/user');
 let userCommandDB = require('./database/userCommand');
 let auctionDB = require('./database/auction');
 
-//bot configure
-const telegramBot = new TelegramApi(process.env.TLBOT_TOKEN, { polling: true });
+//change buzzer status every 10 minutes
+let buzzerStatus = require('./buzzerStatus');
 
+/*
+let newBuzzerStatus = new buzzerStatus({
+    sendWarningToSlackorNot: false,
+    index: 1
+})
+newBuzzerStatus.save(function (err) {
+    if (err) throw err;
+})
+*/
+
+let changeBuzzerStatusCron = new cron.CronJob('* 2 * * * *', changeStatusToTrue);
+changeBuzzerStatusCron.start();
+
+//bot configure
+const telegramBot = new TelegramApi(process.env.TGBOT_TOKEN, { polling: true });
+console.log(telegramBot, 'tg bot started');
 telegramBot.userJSON = require('./user.json');
 telegramBot.cardJSON = require('./card.json');
 telegramBot.auctionJSON = require('./auction.json');
@@ -45,15 +59,17 @@ const rulesText = '命令列表 - TL0.0.2'
 const errorText = '輸入指令格式錯誤，請輸入 $help 查看指令列表';
 
 //$help
-telegramBot.on('message', (message) => {
+telegramBot.on('message', async (message) => {
     _, commandContent = message.text.split(' ', 2);
     commandText = (commandContent[0]).toLowerCase();
+    const userStatus = await isNewUserorNot(message.from.id);
+    //console.log(userStatus);
 
     if (commandText == `${prefix}help` && commandContent[1] == undefined) {
         if (message.from.is_bot == false) {
             coroutineForEveryCommand(message.from.username, message.from.id);
         }
-        if (isNewUserorNot(message.from.id)) {
+        if (userStatus == undefined) {
             createNewUserInDB(message.from.username, message.from.id);
         } else {
             console.log("That's old user");
@@ -527,6 +543,7 @@ let chris = new userDB({
 writeDataIntoDB(chris);
 */
 
+
 function createNewUserInDB(username, userID) {
     let newUser = new userDB({
         username: username,
@@ -649,8 +666,12 @@ return userID1;*/
 
 }
 
-function updateAuctionDB() {
-
+function changeStatusToTrue() {
+    buzzerStatus.updateOne({ index: 1 },
+        { sendWarningToSlackorNot: true }).then(result => {
+            console.log(result);
+        })
+    console.log("change");
 }
 
 /*
@@ -663,15 +684,15 @@ function updateJSON(json) {
     })
 }
 
-function isNewUserorNot(userID) {
-    for (let i = 0; i < telegramBot.userJSON[userInfo].length; i++) {
-        if (telegramBot.userJSON[userInfo][i].userID != userID) {
-            return true;
-        } else {
-            console.log("it's old user");
-        }
+async function isNewUserorNot(id) {
+    try {
+        var userStatus = await userDB.findOne({ userID: id }).exec();
+        return userStatus;
+    } catch (err) {
+        console.error(err);
     }
 }
+
 
 
 function coroutineForEveryCommand(username, id) {
